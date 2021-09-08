@@ -1,9 +1,11 @@
 module SolidusCrm
   module Event
     class Order < Base
-      def initialize(order, event)
+      def initialize(order, event, from_event, to_event)
         @order = order
         @event = event
+        @from_event = from_event
+        @to_event = to_event
       end
 
       def emit
