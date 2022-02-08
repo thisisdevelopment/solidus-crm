@@ -8,8 +8,8 @@ module SolidusCrm
       end
     end
 
-    def update_crm
-      Spree::CrmConfig.crm_shipment_emitter_class.new(order, state).emit
+    def update_crm(transition)
+      Spree::CrmConfig.crm_shipment_emitter_class.new(order, state, transition.from_name, transition.to_name).emit
     end
   end
 end
